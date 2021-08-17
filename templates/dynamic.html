@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        .column {
+          float: left;
+          width: 50%;
+          padding: 10px;
+        }
+        
+        /* Clearfix (clear floats) */
+        .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        </style>
+</head>
+<body>
+
+<p>
+current Time:{{msg}}<br>
+last Updated Time:{{timestamp}}
+graph:
+</p>
+<p>
+                        {% for graph in figures %}
+
+
+    <div class="row">
+        <div class="column">
+            <img src={{graph}} alt="my plot"style="width:100%">
+        </div>
+     </div>
+
+
+
+
+
+
+
+
+        {% endfor %}
+
+    
+
+	
+</p>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js">
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function () {
+	setTimeout(function () {
+		location.reload(true);
+	}, 180000);
+	});
+</script>
+</body>
+</html>
